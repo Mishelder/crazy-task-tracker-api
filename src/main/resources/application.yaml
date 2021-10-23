@@ -1,0 +1,9 @@
+    server:
+        port: 8080
+
+    spring:
+        datasource:
+            url: jdbc:postgresql://192.168.1.105:5432/crazy_task_tracker
+            username: postgres
+            password: postgres
+            driver-class-name: org.postgresql.Driver
