@@ -10,11 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @Table(name = "task_state")
 @Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TaskStateEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

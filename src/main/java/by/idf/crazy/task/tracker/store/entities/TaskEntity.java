@@ -7,11 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @Table(name = "task")
 @Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TaskEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
