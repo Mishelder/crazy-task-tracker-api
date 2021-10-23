@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AccessLevel;
@@ -18,7 +19,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-
 @Table(name = "task_state")
 @Getter
 @Setter
@@ -28,6 +28,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TaskStateEntity {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
@@ -36,5 +37,6 @@ public class TaskStateEntity {
   LocalDateTime createdAt = LocalDateTime.now();
   Long ordinal;
   @OneToMany
+  @JoinColumn(name = "task_state_id", referencedColumnName = "id")
   List<TaskEntity> taskEntities = new ArrayList<>();
 }
