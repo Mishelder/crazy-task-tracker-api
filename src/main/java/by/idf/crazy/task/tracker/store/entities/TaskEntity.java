@@ -30,6 +30,7 @@ public class TaskEntity {
   Long id;
   @Column(unique = true)
   String name;
+  @Builder.Default
   LocalDateTime createdAt = LocalDateTime.now();
   String description;
 }
