@@ -34,9 +34,11 @@ public class TaskStateEntity {
   Long id;
   @Column(unique = true)
   String name;
+  @Builder.Default
   LocalDateTime createdAt = LocalDateTime.now();
   Long ordinal;
   @OneToMany
   @JoinColumn(name = "task_state_id", referencedColumnName = "id")
+  @Builder.Default
   List<TaskEntity> taskEntities = new ArrayList<>();
 }

@@ -34,7 +34,9 @@ public class ProjectEntity {
   Long id;
   @Column(unique = true)
   String name;
+  @Builder.Default
   LocalDateTime createdAt = LocalDateTime.now();
+  @Builder.Default
   @OneToMany
   @JoinColumn(name = "project_id", referencedColumnName = "id")
   List<TaskStateEntity> taskStateEntities = new ArrayList<>();
